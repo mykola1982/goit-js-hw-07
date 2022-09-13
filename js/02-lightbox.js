@@ -26,15 +26,13 @@ function createGalleryMarkup(galleryItems) {
 
 function onImgClick(event) {
   event.preventDefault();
-
   if (event.target.nodeName !== "IMG") {
     return;
   }
 
   var lightbox = new SimpleLightbox(".gallery a", {
     /* options */
+    captionsData: "alt",
+    captionDelay: 250,
   });
- 
-
-  event.target.setAttribute("title", `${event.target.alt}`);
 }
